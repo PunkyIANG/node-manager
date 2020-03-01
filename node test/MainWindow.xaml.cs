@@ -58,6 +58,14 @@ namespace node_test
             node2.Outputs.Add(node2Output);
             node2Output.Value = Observable.Return("Example string");
 
+            //Create the third test node viewmodel 
+            //Its I/O is already set in the HelloWorldNode class, so no need to declare new ones
+
+            var node3 = new HelloWorldNode();
+            node2.Name = "Node 3";
+            network.Nodes.Add(node3);
+
+
             //Assign the viewmodel to the view.
             networkView.ViewModel = network;
 

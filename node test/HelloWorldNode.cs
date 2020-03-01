@@ -22,14 +22,14 @@ namespace node_test
 
             nameInput = new ValueNodeInputViewModel<string>();
             {
-                Name = "Name";
+                Name = "Input";
             }
 
             this.Inputs.Add(nameInput);
 
             textOutput = new ValueNodeOutputViewModel<string>()
             {
-                Name = "Text",
+                Name = "Output",
                 Value = this.WhenAnyObservable(vm => vm.nameInput.ValueChanged)
                     .Select(name => $"Hello {name}!")
             };
